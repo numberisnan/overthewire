@@ -3,5 +3,6 @@
 a=$(expr $1 - 1)
 if [ ! -d ./$1 ] ; then
     mkdir ./$1
+    touch ./$1/pass.txt
 fi
 sshpass -p "$(cat "./$a/pass.txt")" ssh "bandit$1@bandit.labs.overthewire.org" -p 2220
